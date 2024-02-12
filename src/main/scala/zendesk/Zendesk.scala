@@ -1,8 +1,6 @@
 package zendesk
 
 import sttp.client4.quick._
-import sttp.client4.upicklejson.default._
-import upickle.default._
 
 object Zendesk extends App {
   val username: String = sys.env("ZENDESK_USERNAME")
@@ -13,10 +11,9 @@ object Zendesk extends App {
     .auth.basic(user = username, password = password)
     .send()
 
-  val jsonString = response.body
-  val json: ujson.Value  = ujson.read(jsonString)
+  val json = ujson.read(response.body)
 
-  println(json)
+  os.write(os.pwd / "response.json", ujson.write(json))
 
   // println(json.body.getClass)
   // prints the type of the body

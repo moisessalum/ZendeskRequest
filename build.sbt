@@ -11,5 +11,6 @@ lazy val root = (project in file("."))
       "com.softwaremill.sttp.client4" %% "upickle" % "4.0.0-M9",
       "org.apache.spark" %% "spark-core" % sparkVersion,
       "org.apache.spark" %% "spark-sql" % sparkVersion,
+      "com.lihaoyi" %% "os-lib" % "0.9.0",
     )
   )
