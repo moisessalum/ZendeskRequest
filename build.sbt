@@ -12,5 +12,6 @@ lazy val root = (project in file("."))
       "org.apache.spark" %% "spark-core" % sparkVersion,
       "org.apache.spark" %% "spark-sql" % sparkVersion,
       "com.lihaoyi" %% "os-lib" % "0.9.0",
+      "com.lihaoyi" %% "pprint" % "0.7.0",
     )
   )
